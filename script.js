@@ -5,33 +5,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const entryDateInput = document.getElementById('entry-date');
     const contextMenu = document.getElementById('context-menu');
     let currentEntryIndex = null;
-    const saveModal = document.getElementById('save-modal');
-    const exportCodeEl = document.getElementById('export-code');
-    const saveForPublishingBtn = document.getElementById('save-for-publishing-btn');
-    const closeModalBtn = saveModal.querySelector('.close-btn');
 
     let entries = JSON.parse(localStorage.getItem('dateEntries')) || [
         { title: "Our First Kiss", date: "2022-01-20" },
         { title: "Anniversary", date: "2021-07-15" }
     ];
-
-    const showSaveModal = () => {
-        const exportString = `let entries = ${JSON.stringify(entries, null, 4)};`;
-        exportCodeEl.value = exportString;
-        saveModal.style.display = 'flex';
-    };
-
-    const hideSaveModal = () => {
-        saveModal.style.display = 'none';
-    };
-
-    saveForPublishingBtn.addEventListener('click', showSaveModal);
-    closeModalBtn.addEventListener('click', hideSaveModal);
-    window.addEventListener('click', (e) => {
-        if (e.target === saveModal) {
-            hideSaveModal();
-        }
-    });
 
     const saveEntries = () => {
         localStorage.setItem('dateEntries', JSON.stringify(entries));
