@@ -7,9 +7,8 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentEntryIndex = null;
 
     let entries = JSON.parse(localStorage.getItem('dateEntries')) || [
-        { title: "Jelly's Birthday", date: "2005-12-31" },
-        { title: "Together", date: "2025-04-05" },
-        { title: "Otter's Birthday", date: "2004-09-16" }
+        { title: "Our First Kiss", date: "2022-01-20" },
+        { title: "Anniversary", date: "2021-07-15" }
     ];
 
     const saveEntries = () => {
