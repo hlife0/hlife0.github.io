@@ -25,10 +25,25 @@
 
     <script src="script.js"></script>
 
+    <!-- Context Menu -->
     <div id="context-menu" class="context-menu">
         <div class="context-menu-item" id="edit-title-option">Edit Title</div>
         <div class="context-menu-item" id="edit-date-option">Edit Date</div>
         <div class="context-menu-item" id="delete-option">Delete</div>
+    </div>
+
+    <!-- Save Modal -->
+    <div id="save-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Save Your Entries</h2>
+            <p>To save your current entries for publishing, copy the code below and paste it into your <code>script.js</code> file, replacing the existing 'entries' array.</p>
+            <textarea id="export-code" readonly></textarea>
+        </div>
+    </div>
+
+    <div class="footer-actions">
+        <button id="save-for-publishing-btn">Save for Publishing</button>
     </div>
 </body>
 </html>
